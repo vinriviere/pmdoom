@@ -271,7 +271,8 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = sting
-AM_CFLAGS = -Wall
+AM_CFLAGS = -Wall -Wa,--register-prefix-optional -Dfps=MYfps
+AM_CCASFLAGS = $(AM_CFLAGS)
 header_files = am_map.h d_englsh.h d_event.h d_french.h d_items.h d_main.h \
 	d_net.h doomdata.h doomdef.h doomstat.h doomtype.h d_player.h dstrings.h \
 	d_textur.h d_think.h d_ticcmd.h f_finale.h f_wipe.h g_game.h hu_lib.h \

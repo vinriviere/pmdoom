@@ -1,11 +1,12 @@
 #if defined(__GNUC__) && (defined(__m68k__) && !defined(__mcoldfire__))
 
-	.globl	_FixedMul020
-	.globl	_FixedDiv2020
+	.globl	FixedMul020
+	.globl	FixedDiv2020
 
-	.chip	68020
+	.arch	68020
+	.cpu	68020
 
-_FixedMul020:
+FixedMul020:
 	move.l 4(%sp),%d0
 	move.l 8(%sp),%d1
 
@@ -15,7 +16,7 @@ _FixedMul020:
 
 	rts
 
-_FixedDiv2020:
+FixedDiv2020:
 	move.l %d2,-(%sp)
 	move.l 8(%sp),%d0
 

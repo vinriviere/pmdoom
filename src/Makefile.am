@@ -1,6 +1,7 @@
 SUBDIRS = sting
 
-AM_CFLAGS = -Wall
+AM_CFLAGS = -Wall -Wa,--register-prefix-optional -Dfps=MYfps
+AM_CCASFLAGS = $(AM_CFLAGS)
 
 bin_PROGRAMS = doom
 

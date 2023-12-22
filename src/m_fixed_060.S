@@ -1,11 +1,12 @@
 #if defined(__GNUC__) && (defined(__m68k__) && !defined(__mcoldfire__))
 
-	.globl	_FixedMul060
-	.globl	_FixedDiv2060
+	.globl	FixedMul060
+	.globl	FixedDiv2060
 
-	.chip	68060
+	.arch	68060
+	.cpu	68060
 
-_FixedMul060:
+FixedMul060:
 	fmove.l	4(%sp),fp0
 	fmul.l	8(%sp),fp0
 	fmul.s	&0f0.0000152587890625,fp0
@@ -13,7 +14,7 @@ _FixedMul060:
 
 	rts
 
-_FixedDiv2060:
+FixedDiv2060:
 	fmove.l	4(%sp),fp0
 	fmove.l	8(%sp),fp1
 	fdiv.x		fp1,fp0
